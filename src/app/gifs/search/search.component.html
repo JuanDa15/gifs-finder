@@ -1,0 +1,5 @@
+<label for="searchbar" class="searchbar__label animate__animated animate__bounceInDown">Search: </label>
+<div class="box animate__animated animate__bounceInDown">
+  <input type="search" name="searchbar" id="searchbar" placeholder="Search gifs..." (keyup.enter)="search()" (search)="verify()"  #searchText >
+  <button (click)="search()"><i class="fas fa-search"></i></button>
+</div>

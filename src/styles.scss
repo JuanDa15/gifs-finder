@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+$Raisin_Black :#202124;
+$white : #EFF6EE;
+$oxford_blue: #191D32;
+$decorator1: #00c8e0;
+$gray: #292929;
+
+html,body{
+  height: 100%;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin separator {
+  height: 1px;
+  width: 85%;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background-color: #fff;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

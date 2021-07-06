@@ -1,0 +1,20 @@
+<div class="background">
+  <div class="gif__popup">
+    <div class="information">
+      <span class="info">title:</span>
+      <span class="response">{{information.title}}</span>
+      <span class="info">url: </span>
+      <div class="textarea__box">
+        <textarea name="url" id="url" value="{{information.url}}"></textarea>
+        <button (click)="copyURL()"><i class="far fa-copy"></i></button>
+        <div class="notification animate__animated animate__fadeIn" *ngIf="notification">
+          copiado correctamente
+        </div>
+      </div>
+    </div>
+    <div class="gif__box">
+      <img src="{{url}}"/>
+    </div>
+    <button routerLink="" class="exit"><i class="fas fa-times"></i></button>
+  </div>
+</div>
