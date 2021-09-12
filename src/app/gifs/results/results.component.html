@@ -2,7 +2,7 @@
 <div class="gifs__container">
   <div class="card animate__animated animate__backInDown" *ngFor="let item of gifsArray">
     <img [src]="item.images.downsized!.url" [alt]="item.title" loading="lazy">
-    <button (click)="seeGif(item.id)"><i class="fas fa-search-plus"></i></button>
+    <button [routerLink]="['/details', item.id]"><i class="fas fa-search-plus"></i></button>
   </div>
   <div class="message animate__animated animate__fadeIn" *ngIf="gifsArray.length == 0">
     Sorry, We didn't find results for your search.

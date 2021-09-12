@@ -1,7 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { waitForAsync } from '@angular/core/testing';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Data } from '../interface/gif.interface';
 import { GifService } from '../services/gif.service';
+import { switchMap, tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-gifview',
@@ -12,17 +13,19 @@ export class GifviewComponent implements OnInit {
 
   information:any = {};
   url:string = '';
+  id:string = '';
   notification:boolean = false
 
-  constructor(private gifservice:GifService) { }
+  constructor(private gifservice:GifService,
+              private activatedRoute:ActivatedRoute){}
 
   ngOnInit(): void {
-    this.loadInfo();
-  }
-
-  loadInfo():void{
-    this.gifservice.get().subscribe(
-      resp=>{
+    this.activatedRoute.params
+      .pipe(
+        switchMap((param) => this.gifservice.get(param.id))
+      )
+    .subscribe(
+      resp => {
         this.information = resp.data;
         this.verifyURL(this.information);
       }

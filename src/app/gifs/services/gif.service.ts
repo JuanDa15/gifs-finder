@@ -8,20 +8,17 @@ import { Data, Gifinfo } from '../interface/gif.interface';
 })
 export class GifService {
 
-  public id:string = '';
 
   constructor(private http:HttpClient){
   }
 
-  get(){
-    if(sessionStorage.getItem('id')){
-      this.id = sessionStorage.getItem('id')!;
-    }
+  get(id:string){
+  
     
     const params = new HttpParams()
                   .set('api_key',environment.API)
-                  .set('gif_id',this.id);
+                  .set('gif_id',id);
 
-    return this.http.get<Gifinfo>(`${environment.gifsURL}/${this.id}`,{params});
+    return this.http.get<Gifinfo>(`${environment.gifsURL}/${id}`,{params});
   }
 }

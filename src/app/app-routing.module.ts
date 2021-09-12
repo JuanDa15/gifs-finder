@@ -4,7 +4,8 @@ import { GifviewComponent } from './gifs/gifview/gifview.component';
 
 const routes: Routes = [
   // {path:'',component:AppComponent},
-  {path:'details',component:GifviewComponent}
+  {path:'details/:id',component:GifviewComponent},
+  {path:'**', redirectTo: ''}
 ];
 
 @NgModule({

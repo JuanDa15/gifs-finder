@@ -2,6 +2,7 @@
   <h1 class="animate__animated animate__bounceInDown"><span>Gif's</span> Finder</h1>
   <div class="separator">
   </div>
+  <p class="recents__label">Recents</p>
   <div class="recents animate__animated animate__bounceInDown">
     <div class="recents__item" *ngFor="let object of history">
       <a (click)="search(object)" >{{object |titlecase}}</a>

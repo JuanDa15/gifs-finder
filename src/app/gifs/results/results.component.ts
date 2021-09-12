@@ -20,9 +20,4 @@ export class ResultsComponent implements OnInit {
   ngOnInit(): void {
     this.trendingservice.gifsArray;
   }
-
-  seeGif(id:string){
-    sessionStorage.setItem('id',id);
-    this.router.navigate(['details']);
-  }
 }
